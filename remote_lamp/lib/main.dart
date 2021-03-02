@@ -1,9 +1,13 @@
 import 'dart:convert';
+import 'package:flutter/services.dart';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
   runApp(RemoteLamp());
 }
 
@@ -13,6 +17,7 @@ class RemoteLamp extends StatelessWidget {
     return MaterialApp(
       title: 'Remote Lamp',
       home: LampConnection(),
+      debugShowCheckedModeBanner: false
     );
   }
 }
